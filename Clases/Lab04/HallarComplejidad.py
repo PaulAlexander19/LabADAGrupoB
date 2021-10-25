@@ -20,6 +20,11 @@ def every_other(array):
 
         print("----\n")
 
+## ANÄLISIS DE COMPLEJIDAD ----------------------------
+# Como se pude obserbar son 2 ciclos anidades y en cada cilo se recorre todo el arreglo
+# por lo que la complejidad es O(n^2)
+# -----------------------------------------------------
+
 
 ## Prueba del algoritmo 
 
