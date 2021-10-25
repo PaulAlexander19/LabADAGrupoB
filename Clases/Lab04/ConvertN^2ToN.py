@@ -1,3 +1,4 @@
+## Convertir el algoritmo original en una complejidad de O(n)
 ## Algoritmo ariginal
 
 def greatestNumberN2(array):
@@ -17,3 +18,10 @@ def greatestNumberN(array):
         if i > max:
             max = i
     return max
+
+## Pruebas de funcionamiento
+
+arreglo = [1,6,3,2,13,9,12]
+
+print("Algoritmo Original: ", greatestNumberN2(arreglo))
+print("Algoritmo Convertido: ", greatestNumberN(arreglo))
