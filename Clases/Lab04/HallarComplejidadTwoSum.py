@@ -20,5 +20,12 @@ def twoSum(array):
     for i in range(len(array)):
         for j in range(len(array)):
             if i != j and array[i] + array[j] == 10:
+                print(str(array[i]) +"-"+ str(array[j]))
                 return True
     return False
+
+# Probando algoritmo
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(twoSum(array))
+
+
