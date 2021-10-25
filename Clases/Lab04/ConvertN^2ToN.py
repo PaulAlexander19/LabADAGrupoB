@@ -9,6 +9,11 @@ def greatestNumberN2(array):
         if isValTheGreatest:
             return i
 
+## Algoritmo convertido a N
 
-
-
+def greatestNumberN(array):
+    max = array[0]
+    for i in array:
+        if i > max:
+            max = i
+    return max
