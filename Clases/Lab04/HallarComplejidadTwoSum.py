@@ -28,4 +28,5 @@ def twoSum(array):
 array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(twoSum(array))
 
-
+# Analisis de complejidad del algoritmo
+# Como el algoritmo tiene 2 ciclos for y en cada uno recorre el arreglo, la complejidad del algoritmo es O(n^2)
