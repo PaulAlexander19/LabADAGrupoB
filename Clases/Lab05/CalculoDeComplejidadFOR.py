@@ -376,19 +376,19 @@ def findNeedle(needle, haystack):
 def pick_resume(resumes):
     eliminate = "top"
 
-    while resumes.length > 1:
+    while len(resumes) > 1:
         if eliminate == "top":
-            resumes = resumes[resumes.length / 2, resumes.length - 1]
+            a = round(len(resumes) / 2)
+            b =   len(resumes) 
+            resumes = resumes[a:b]
             eliminate = "bottom"
         elif eliminate == "bottom":
-            resumes = resumes[0, resumes.length / 2]
+            b = round(len(resumes) / 2)
+            resumes = resumes[0:b]
             eliminate = "top"
-        end
-    end
     return resumes[0]
 
 
-end
 
 ## *** ANALISIS DE LA COMPLEJIDAD ** ##
 # La complejidad es O(log_2(n)) ya que recorre el bucle y en la siguinete iteración, el tamaño se reduce a la mitad
