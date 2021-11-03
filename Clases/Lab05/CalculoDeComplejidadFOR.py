@@ -297,3 +297,33 @@ for (i = 1; i < n; i=i*3)     // O(log_3(n))
 
 for (i = n; i >= 1; i=i/2)    // O(log_2(n))
 
+## Ejercicios adicionales------------------------------------------------------
+
+# 4. What is the time complexity in terms of O()?
+# O(n * m)
+# n : 
+# m :
+"fgh" "abcdefghi"
+def find_needle(needle, haystack):
+    needle_index = 0
+    haystack_index = 0
+    
+    while haystack_index < haystack.length:
+        if needle[needle_index] == haystack[haystack_index]:
+            found_needle = True
+            while needle_index < needle.length:
+                if needle[needle_index] != haystack[haystack_index + needle_index]:
+                    found_needle = False
+                break
+            needle_index += 1
+        return true if found_needle
+        needle_index = 0
+        end
+        haystack_index += 1
+    return False
+
+
+    ## La complejida es O(n*m) ya que en el bucle interior recorre "needle" y en el bucle exterior recorre"haystack"
+    ## por lo que la complejidad es la multiplicacion de los tamaños de las 2 entradas.
+
+    
