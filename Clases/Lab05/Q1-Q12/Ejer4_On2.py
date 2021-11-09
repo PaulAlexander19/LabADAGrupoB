@@ -3,12 +3,12 @@
 
 
 def ejercicio4(n):
-    i = 0
-    while(i < n):
-        j = 0
-        while(j < n):
-            j = j+1
-        i = i+1
+    i = 0                   # contador
+    while(i < n):           # o(n)
+        j = 0               # contador
+        while(j < n):       # o(n)
+            j = j+1         # incremento j
+        i = i+1             # incremento i
 
     return i
     

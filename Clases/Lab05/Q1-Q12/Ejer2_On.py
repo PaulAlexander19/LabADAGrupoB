@@ -3,8 +3,8 @@
 
 def ejercicio2(n):
     i = n
-    while(i > 0):
-        i = i - 1
+    while(i > 0):       #O(n)
+        i = i - 1   # O(2)
 
     return i
 

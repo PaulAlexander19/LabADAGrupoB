@@ -3,11 +3,11 @@
 
 def ejercicio10(n):
     i = 0
-    while(i < n):
+    while(i < n):       # O(n)
         i = i + 1
 
     j = 0
-    while(j < n):
+    while(j < n):       # O(n)
         j = j + 1
 
     return i

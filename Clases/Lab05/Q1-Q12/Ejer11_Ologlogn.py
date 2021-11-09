@@ -4,12 +4,12 @@
 def ejercicio11(n):
     p = 0
     i = 1
-    while(i < n):
+    while(i < n):   # O(log(n))      
         p = p + 1
         i = i * 2
 
     j = 1
-    while(j < p):
+    while(j < p):   # O(log(log(n)))
         j = j * 2
 
     return p

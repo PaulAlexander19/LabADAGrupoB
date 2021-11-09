@@ -3,9 +3,9 @@
 
 def ejercicio12(n):
     i = 0
-    while(i < n):
+    while(i < n):               # O(n)
         j = 1
-        while(j < n):
+        while(j < n):          # O(log n)
             j = j * 2
         i = i + 1
 

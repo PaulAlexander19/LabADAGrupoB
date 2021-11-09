@@ -3,10 +3,10 @@
 
 
 def ejercicio3(n):
-    i = 0
-    while(i < n):
-        i = i + 5
-    return i
+    i = 0           # Contador de iteraciones
+    while(i < n):   # Mientras i sea menor que n o(n)
+        i = i + 5   # Incremento de i en 5
+    return i        # Retorno de i
 
 print(ejercicio3(13))
 

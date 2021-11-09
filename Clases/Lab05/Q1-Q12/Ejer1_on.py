@@ -4,8 +4,8 @@
 def ejercicio1 (n):
     # Q1: What is the time complexity of
     i = 0
-    while (i < n):
-        i = i + 1
+    while (i < n):          # O(n)
+        i = i + 1       # O(2)
 
     return i
 
