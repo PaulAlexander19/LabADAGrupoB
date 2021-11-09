@@ -339,28 +339,5 @@ def ejercicio12(n):
 # ----------------------------------------------------------------------------------------------
 
 
-# 5. What is the time complexity in terms of O()?
-# O(log_2(n))
-# resumes is an array
-def pick_resume(resumes):
-    eliminate = "top"
-
-    while len(resumes) > 1:
-        if eliminate == "top":
-            a = round(len(resumes) / 2)
-            b =   len(resumes) 
-            resumes = resumes[a:b]
-            eliminate = "bottom"
-        elif eliminate == "bottom":
-            b = round(len(resumes) / 2)
-            resumes = resumes[0:b]
-            eliminate = "top"
-    return resumes[0]
-
-
-
-## *** ANALISIS DE LA COMPLEJIDAD ** ##
-# La complejidad es O(log_2(n)) ya que recorre el bucle y en la siguinete iteración, el tamaño se reduce a la mitad
-# y según lo que demostramos en los ejercicios anteriores, el resultado es un log(n)
 
 # ----------------------------------------------------------------------------------------------
