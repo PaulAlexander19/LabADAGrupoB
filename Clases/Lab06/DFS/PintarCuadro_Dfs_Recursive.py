@@ -1,4 +1,4 @@
-## Algoritmo de busqueda por profundidad recursivo
+## Algoritmo de busqueda por profundidad recursivo para pintar una matris
 ## Autor: Luque Ccosi Paul Alexander
 
 ## algoritmo como tal
