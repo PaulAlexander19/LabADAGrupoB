@@ -53,7 +53,6 @@ node7 = Node(7)
 ## generate a graph with nodes and edges
 node1.addNeighbor(node2)
 node1.addNeighbor(node3)
-node1.addNeighbor(node4)
 node2.addNeighbor(node4)
 node2.addNeighbor(node5)
 node3.addNeighbor(node6)
@@ -64,5 +63,5 @@ node3.addNeighbor(node7)
         #2              #5
     #4      5       #6    #7
     
-print("Esperado: node1, node2, node3, node4, node5, node6, node7")   
+print("Esperado: node1, node2, node4, node5, node3, node6, node7")   
 dfs_recursive(node1)
