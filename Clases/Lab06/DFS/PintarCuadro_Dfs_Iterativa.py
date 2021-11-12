@@ -1,13 +1,10 @@
-# Algoritmo de busqueda por profundidad iterativo
+# Algoritmo de busqueda por profundidad iterativo para pintar una matris
 # Autor: Luque Ccosi Paul Alexander
 
 
 # Implementación de una pila en pyhton
-
-from typing import List
-
-
-class Stack:  # Creamos la clase Stack
+# Creamos la clase Stack
+class Stack:
     def __init__(self):
         self.items = []
 
@@ -24,19 +21,21 @@ class Stack:  # Creamos la clase Stack
         print(self.items)
 
 
-class Pount():
-    def setX(self, x):
-        self.x = x
-
-    def setY(self, y):
-        self.y = y
-
-    def __str__(self):
-        return "("+str(self.x)+", "+str(self.y)+")"
-
-
-# algoritmo como tal
+# algoritmo como tal para pintar
 def dfs_iterative(matrix, startX, startY, simbVisited, simbPared):
+    
+    ## Visitar el primer valor, verificamos si es pares, y si esta en los limites
+    try:
+        if(matrix[startX][startY] != simbPared):
+            matrix[startX][startY] = simbVisited
+        else:
+            print("es pared, no se pude pintar")
+            return matrix
+    except:
+        print("Fuera del os limites")
+        return matrix
+
+    ## Insertando y marcando el punto
     S = Stack()
     print("Insertando (" + str(startX)+", "+str(startY)+")")
     punto = [startX, startY]
@@ -45,13 +44,16 @@ def dfs_iterative(matrix, startX, startY, simbVisited, simbPared):
     print("Visitando nodo (" + str(startX)+", "+str(startY)+")")
     matrix[startY][startY] = simbVisited
 
+    ## Verificamos si la lista esta vacia
     while not S.is_empty():
         v = S.pop()
         print("Eliminando (" + str(v[0])+", "+str(v[1])+")")
 
+        ## Recorremos los puntos adyacentes
         dx = [-1, 0, 1, 0]
         dy = [0, 1, 0, -1]
 
+        ## Recorremos los puntos adyacentes
         for i in range(4):
             nx = dx[i] + v[0]
             ny = dy[i] + v[1]
@@ -63,15 +65,15 @@ def dfs_iterative(matrix, startX, startY, simbVisited, simbPared):
                 if(matrix[nx][ny] != simbVisited and matrix[nx][ny] != simbPared):
 
                     print("Visitando nodo (" + str(nx)+", "+str(ny)+")")
+                    ## Marcamos el nodo visitado
                     matrix[nx][ny] = simbVisited
                     print("Insertando (" + str(nx)+", "+str(ny)+")")
+                    ## Agregamos a la pila
                     tempo = [nx, ny]
                     S.push(tempo)
     return matrix
 
 # Metodo para imprimir la matriz
-
-
 def printMatrix(matrix):
     for i in matrix:
         for j in i:
@@ -92,4 +94,4 @@ matri = [
 
 
 printMatrix(matri)  # antes
-printMatrix(dfs_iterative(matri, 5, 5, "o", "#"))  # despues
+printMatrix(dfs_iterative(matri, 1, 1, "o", "#"))  # despues
