@@ -14,12 +14,7 @@ def div (numa, numb):
     return numa // numb
 
 def polishNotation(entrada, simbolos):
-    number = ""
-    flag_antes = False
-    for  i in entrada:
-        
-        
-        # print(i)
+    for  i in entrada.split():
         if(i in simbolos):
             flag_antes =   True
             operandoB = s.pop()
@@ -34,14 +29,8 @@ def polishNotation(entrada, simbolos):
                 s.push(div(operandoA, operandoB))
             
         else:
-            if(i == " " and flag_antes == False):
-                # print("number: "+number)
-                s.push(int(number))
-                number = ""   
-                continue
-            else:
-                flag_antes = False
-                number = str(number) + str(i)
+            s.push(int(i))
+            continue
             
     return s.top()
 
@@ -50,13 +39,13 @@ def polishNotation(entrada, simbolos):
 simbolos = "+-*/"
 
 
-# entrada = "2 1 + 3 *"
-# print("Entrada :" + entrada)
-# print(polishNotation(entrada, simbolos))
+entrada = "2 1 + 3 *"
+print("Entrada :" + entrada)
+print(polishNotation(entrada, simbolos))
 
-# entrada = "4 13 5 / +"
-# print("Entrada :" + entrada)
-# print(polishNotation(entrada, simbolos))
+entrada = "4 13 5 / +"
+print("Entrada :" + entrada)
+print(polishNotation(entrada, simbolos))
 
 entrada = "10 6 9 3 + -11 * / * 17 + 5 +"
 print("Entrada :" + entrada)
