@@ -14,9 +14,8 @@ def div (numa, numb):
     return numa // numb
 
 def polishNotation(entrada, simbolos):
-    for  i in entrada.split():
+    for  i in entrada.split(" "):
         if(i in simbolos):
-            flag_antes =   True
             operandoB = s.pop()
             operandoA = s.pop()
             if(i == "+"):
