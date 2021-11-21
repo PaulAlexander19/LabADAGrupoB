@@ -2,7 +2,7 @@
 
 # Luque Ccosi Paul Alexander
 
-## Ejerccio 3 usando colas para poner en mayuscula
+## Ejerccio 3 usando colas para poner en mayuscula segun el los caracteres del ACTIVATE o DESACTIVATE
 
 from collections import deque
 
@@ -14,23 +14,27 @@ def capsLock(str):
     flag = False
     for i in str:   
         if(i in activate):
-            falg = True
+            flag = True
             continue
         elif (i in desactivate):
-            falg = False
+            flag = False
             continue
 
         # Agregar de acuerdo a la si esta activado o no
         if(flag):
             q.append(i.upper())
-            print(q)
         else:
             q.append(i)
-            print(q)
+
 
     return q
 
 text = "hola@yo$tu"
-
+#text = input(":")
 r = capsLock(text)
 print(r)
+resultado = ""
+for i in r:
+    resultado += i
+
+print("Resultado Final: "+resultado)
