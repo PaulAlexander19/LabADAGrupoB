@@ -1,4 +1,5 @@
 ## Minimum Add to Make Parentheses Valid
+## Luque Ccosi Paul Alexander
 
 ## Encontrar la minima cantidad de parentesis para que sea valida la entrada de parentesis
 
