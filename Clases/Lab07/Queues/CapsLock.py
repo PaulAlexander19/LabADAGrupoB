@@ -10,7 +10,6 @@ def capsLock(str):
     activate = "@"
     desactivate = "$"
     q = deque()
-    print(str)
     flag = False
     for i in str:   
         if(i in activate):
@@ -29,12 +28,22 @@ def capsLock(str):
 
     return q
 
-text = "hola@yo$tu"
-#text = input(":")
+## CASOS DE PRUEBA
+text = "abc$d@ef$g$"
 r = capsLock(text)
-print(r)
+resultado = ""
+for i in r:
+    resultado += i
+print("Texto: " + text)
+print("Resultado Final: "+resultado)
+
+print("-------------------")
+
+text = "hola@yo$tu"
+r = capsLock(text)
 resultado = ""
 for i in r:
     resultado += i
 
+print("Texto: " + text)
 print("Resultado Final: "+resultado)
