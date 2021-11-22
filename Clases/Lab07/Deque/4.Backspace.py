@@ -11,13 +11,13 @@ def Backspace(str):
         if i == key:
             try:
                 d.pop()
-            except IndexError:
+            except IndexError: ## por si no hay elementos
                 pass
                 print("Cola vacia no se borra nada")
         else:
             d.append(i)
             
-    return "".join(d)
+    return "".join(d) ## retornamos una cadena con los elementos de la cola d
 
 
 ## Casos de prueba

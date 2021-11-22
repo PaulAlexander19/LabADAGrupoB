@@ -15,9 +15,9 @@ def InterviewWait(listaWait):
         # Ingresamos el minimo valor
         else:
             if(listaWait[0] < listaWait[-1]):
-                resul += listaWait.pop(0)
+                resul += listaWait.pop(0) ## accedemos al primer elemento por la izquierda
             else:
-                resul += listaWait.pop(-1)
+                resul += listaWait.pop(-1) ## accedemos con primer elemeto por la derecha
     return resul
 
 

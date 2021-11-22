@@ -11,7 +11,7 @@ def parenthesesValid(str):
     s = [] ## stack
     for i in str:
         print(i)
-        if(i in first):
+        if(i in first):  ## verificamos si es el caracter del apertura
             s.append(i)
         elif(i in finish):
             if(len(s) == 0 or s[-1] in finish):

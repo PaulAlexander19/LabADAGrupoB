@@ -7,11 +7,11 @@
 from collections import deque
 
 def capsLock(str):
-    resul = ""
-    activate = "@"
+    resul = ""      ## Donde se almacenará el resultado
+    activate = "@"      
     desactivate = "$"
     q = deque()
-    flagActivate = None
+    flagActivate = None ## en un inicio no esta activado ni desactivado, para que ingrese tanto mayuscula como miniscula
     for i in str:
         ## Conversion del buffer o salida del  buffe
         if(i in activate):
@@ -35,7 +35,7 @@ def capsLock(str):
     
     ## liberamos el resto del buffer
     for i in range(len(q)):
-        resul += q.popleft()
+        resul += q.popleft() ## sacamos un elemento por la izquierda
     
                     
 

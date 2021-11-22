@@ -15,7 +15,7 @@ def mergeList(lista):
             priority_queue.put(j) ## almacenamos en la lista de priridad
 
     while not priority_queue.empty():
-        res.append(priority_queue.get()) ## agregamos en una lista el resultado
+        res.append(priority_queue.get()) ## agregamos en una lista el resultado de la cola de prioridad
 
     return res
 
