@@ -1,7 +1,7 @@
-# InterviewWait
+# NAME; InterviewWait
 
-# Verificar el tiempo enque nos tocara esperar para la entrevista, nosotros somos el valor -1, siempre elige al menos valor de los extremos
-# Luque Ccosi Paul Alexander
+# DESCRIPCION: Verificar el tiempo enque nos tocara esperar para la entrevista, nosotros somos el valor -1, siempre elige al menos valor de los extremos
+# ALUMNO: Luque Ccosi Paul Alexander
 
 def InterviewWait(listaWait):
     resul = 0

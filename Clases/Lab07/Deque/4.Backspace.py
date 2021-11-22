@@ -1,6 +1,7 @@
 ## Ejercicio Backspace
-## En una cola doblemente enlazada borrar el ultimo elemento si se ingresa un #
-# Luque Ccosi Paul Alexander
+
+## DESCRIPCION: En una cola doblemente enlazada borrar el ultimo elemento si se ingresa un #
+## Autor:  Luque Ccosi Paul Alexander
 from collections import deque
 
 def Backspace(str):

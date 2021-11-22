@@ -1,7 +1,10 @@
 #!/usr/bin/python
 
-## Evaluate Reverse Polish Notation
-## Evaluar si una cadena de string cumple con la notacion de Polish y si cumple retornar el resultado
+## NAME: Evaluate Reverse Polish Notation
+## ALUMNO: Luque Ccosi Paul Alexander
+## DESCRIPCION: Evaluar si una cadena de string cumple con la notacion de Polish y si cumple retornar el resultado
+
+
 ## Metodos para realizar las operaciones
 def suma (numa, numb):
     return numa + numb

@@ -1,9 +1,8 @@
 ## Merge k Sorted Lists
 
-## Luque Ccosi Paul Alexander
+## ALUMNO: Luque Ccosi Paul Alexander
 
-## Dada una lista ordenarnalas en una lista general, ordenadas por el orden de los numeros
-## en otas palabras, ordenar en una cola de prioridad
+## DESCRIPCION: Dada una lista ordenarnalas en una lista general, ordenadas por el orden de los numeros, en otas palabras, ordenar en una cola de prioridad
 import queue
 
 def mergeList(lista):

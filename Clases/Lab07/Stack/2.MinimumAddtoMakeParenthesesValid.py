@@ -1,7 +1,7 @@
-## Minimum Add to Make Parentheses Valid
-## Luque Ccosi Paul Alexander
+## NME: Minimum Add to Make Parentheses Valid
+## ALUMNO: Luque Ccosi Paul Alexander
 
-## Encontrar la minima cantidad de parentesis para que sea valida la entrada de parentesis
+## DESCRIPCION: Encontrar la minima cantidad de parentesis para que sea valida la entrada de parentesis
 
 ## Aqui podemos agregar mas elementos
 first = ["("]

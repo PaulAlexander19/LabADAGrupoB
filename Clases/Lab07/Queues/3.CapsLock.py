@@ -1,8 +1,7 @@
 #!/usr/bin/python
 
-# Luque Ccosi Paul Alexander
-
-## Ejerccio 3 usando colas para poner en mayuscula segun el los caracteres del ACTIVATE o DESACTIVATE
+# ALUMNO: Luque Ccosi Paul Alexander
+## DESCRIPCION: Ejerccio 3 usando colas para poner en mayuscula segun el los caracteres del ACTIVATE o DESACTIVATE
 
 from collections import deque
 
