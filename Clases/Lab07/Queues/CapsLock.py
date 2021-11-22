@@ -32,7 +32,11 @@ def capsLock(str):
                 q.append(i.upper())
             else: ## Agreamos si no esta actvado ni descatiavdo "@"
                 q.append(i)
-            
+    
+    ## liberamos el resto del buffer
+    for i in range(len(q)):
+        resul += q.popleft()
+    
                     
 
 
@@ -46,5 +50,9 @@ print("Resultado Final: "+capsLock(text))
 print("-------------------")
 
 text = "pro@band$o@$"
+print("Texto: " + text)
+print("Resultado Final: "+capsLock(text))
+
+text = "pro@band$o@"
 print("Texto: " + text)
 print("Resultado Final: "+capsLock(text))
