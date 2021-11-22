@@ -7,43 +7,44 @@
 from collections import deque
 
 def capsLock(str):
+    resul = ""
     activate = "@"
     desactivate = "$"
     q = deque()
-    flag = False
-    for i in str:   
+    flagActivate = None
+    for i in str:
+        ## Conversion del buffer o salida del  buffe
         if(i in activate):
-            flag = True
-            continue
-        elif (i in desactivate):
-            flag = False
-            continue
+            if(flagActivate == None or flagActivate == False):
+                q = deque([x.upper() for x in q])  ## Convirtiendo el buffer en matusculas
+                flagActivate = True  ## cambiando la bandera
+            else:
+                q = deque([x.lower() for x in q])  ## Convirtiendo el buffer en matusculas
+                flagActivate = False  ## cambiando la bandera
+        elif(i in desactivate): ## liberamos el buffer
+            for i in range(len(q)):
+                resul += q.popleft()
+        else: ## Ingresamos un valor
+            ## Ingresamos segun el estado de flagActivate "@"
+            if(flagActivate == False):
+                q.append(i.lower())
+            elif(flagActivate == True):
+                q.append(i.upper())
+            else: ## Agreamos si no esta actvado ni descatiavdo "@"
+                q.append(i)
+            
+                    
 
-        # Agregar de acuerdo a la si esta activado o no
-        if(flag):
-            q.append(i.upper())
-        else:
-            q.append(i)
 
-
-    return q
+    return resul
 
 ## CASOS DE PRUEBA
-text = "abc$d@ef$g$"
-r = capsLock(text)
-resultado = ""
-for i in r:
-    resultado += i
+text = "abc$d@ef$@g$"
 print("Texto: " + text)
-print("Resultado Final: "+resultado)
+print("Resultado Final: "+capsLock(text))
 
 print("-------------------")
 
-text = "hola@yo$tu"
-r = capsLock(text)
-resultado = ""
-for i in r:
-    resultado += i
-
+text = "pro@band$o@$"
 print("Texto: " + text)
-print("Resultado Final: "+resultado)
+print("Resultado Final: "+capsLock(text))
