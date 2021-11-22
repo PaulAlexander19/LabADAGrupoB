@@ -1,31 +1,42 @@
 ## Encontrar el minimo en un arreglo rotado
 ## Autor: Luque Ccosi Paul Alexander
 
-def findFirstLargestValue( numbers):
-    L = 0
-    R = len(numbers) - 1
-    mid = (L + R) // 2      ## Division entera
-    answer = 0              ## Posicion del minimo
+def findFirstLargestValue(array):
+    L = 0                          
+    R = len(array) - 1             
+    min = array[0]                 
+    while (L <= R):                # mientras el indice inferior sea menor al limite superior
+        mid = L + (R - L) // 2     # calculamos el indice medio
+        if min < array[mid]:       # verificamos si el limite inferior es menor al indice medio                     
+            L = mid + 1            # EL LIMITE INFERIOR ES EL INDICE MEDIO + 1
+        else:                      # Si el elemento en el limite inferior es menor al elemento en el indice medio
+            if array[mid] < min:   
+                min = array[mid]   # Asignamos a "min" el elemento del indice medio
+                R = mid            
+            else:
+                L += 1             # incrmentamos el indice inferior
+    return min                     
 
-    while L <= R:           ## Mientras no se cruce los limites
-            
-        mid = (L + R) // 2      
-        
-        if(numbers[L] < numbers[mid]):      ## Si el minimo esta en la mitad izquierda
-            answer =numbers[L]          ## Se asigna el minimo
-            L = mid             ## Se cambia el limite izquierdo
-        
-        elif numbers[mid] < answer :        ## Si el minimo esta en la mitad derecha
-            answer = numbers[mid]
-            R = mid
-        else:       
-            L = L + 1
-    return answer
-
-## casos de prueba para findFirstLargestValue
-
-
-print("\nCaso de prueba:")
-print("findFirstLargestValue([6,8,10,12,1,2,3,5])")
-print("Resultado esperado: 1")
-print("Resultado obtenido:",findFirstLargestValue([6,8,10,12,1,2,3,5]))
+# CASO DE PRUEBA
+    
+array = [1, 3, 5, 7, 9, 11, 13, 18]
+print(array)
+print("Menor del array: ", findFirstLargestValue(array))
+print(array)
+array = [3, 5, 7, 9, 11, 13, 18, 1]
+print("Menor del array: ", findFirstLargestValue(array))
+print(array)
+array = [5, 7, 9, 11, 13, 18, 1, 3]
+print("Menor del array: ", findFirstLargestValue(array))
+print(array)
+array = [7, 9, 11, 13, 18,1, 3, 5]
+print("Menor del array: ", findFirstLargestValue(array))
+print(array)
+array = [11, 13, 18, 1, 3, 5, 7, 9]
+print("Menor del array: ", findFirstLargestValue(array))
+print(array)
+array = [13, 18, 1, 3, 5, 7, 9, 11]
+print("Menor del array: ", findFirstLargestValue(array))
+print(array)
+array = [18, 1, 3, 5, 7, 9, 11, 13, ]
+print("Menor del array: ", findFirstLargestValue(array))
