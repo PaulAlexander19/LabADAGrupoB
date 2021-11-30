@@ -1,3 +1,5 @@
+package Clases.Lab03.Tarea;
+
 import java.util.HashMap;
 
 public class StableMaching {
