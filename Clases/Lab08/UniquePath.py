@@ -1,4 +1,5 @@
 ## UniquuOAth.py
+from copy import copy
 
 def uniquePathsWithObstacles(self, obstacleGrid):
     """
@@ -7,6 +8,16 @@ def uniquePathsWithObstacles(self, obstacleGrid):
     """
     ## Creamos la estrcutura que nos ayudara
     caminos = [ [ 0 for y in range( len(obstacleGrid) ) ] for x in range( len(obstacleGrid[0]) ) ]
+    # caminos = []
+    # for i in obstacleGrid:
+    #     caminos.append(i)
+    
+    
+    
+    # for j in range( len(obstacleGrid) ):
+    #     print(j)
+        # for i in range(len(obstacleGrid[j])):
+        
     
     for j in range(len(obstacleGrid)):
         for i in range(len(obstacleGrid[j])):
@@ -33,11 +44,12 @@ def uniquePathsWithObstacles(self, obstacleGrid):
                         caminos[i][j] = caminos[i][j-1]
                     elif(obstacleGrid[i][j-1] == 1):
                         caminos[i][j] = caminos[i-1][j]
-                    elif(obstacleGrid[i-1][j] == 1 and obstacleGrid[i][j-1] == 1):
+                    elif(obstacleGrid[i][j] == 1 and obstacleGrid[i][j] == 1):
                         caminos[i][j] = 0
                     else:
                         caminos[i][j] = caminos[i-1][j] + caminos[i][j-1]
+    
     return caminos
                         
-a = uniquePathsWithObstacles(None, [[0,0,0],[0,1,0],[0,0,0]])
+a = uniquePathsWithObstacles(None, [[0,0,0,0],[0,1,0,0],[0,0,0,0],[0,0,0,0]])
 print(a)
