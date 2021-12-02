@@ -2,7 +2,7 @@ package Clases.Lab08;
 
 public class UniquePath {
     public static void main(String[] args) {
-        int[][] test = { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
+        int[][] test = { { 0, 0, 0, 1 }, { 0, 1, 0, 1 }, { 0, 0, 0, 0 } };
         int resultado = 0;
         resultado = uniquePathsWithObstacles(test);
         System.out.println(resultado);
@@ -17,7 +17,7 @@ public class UniquePath {
                 // Verificacmos si esta bloqueado
                 if (obstacleGrid[j][i] == 1) {
                     caminos[j][i] = 0;
-                    continue;
+                    continue;// finalizar
                 }
 
                 // Inicio del cuadro
