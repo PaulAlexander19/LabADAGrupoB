@@ -2,7 +2,6 @@ import java.util.Arrays;
 
 // Length of LIS
 // @author: Paul Luque
-// @date: 09/03/2018
 // @description: Find the length of the longest increasing subsequence in an array.
 
 public class LengthOfLIS {

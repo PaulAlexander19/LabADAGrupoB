@@ -1,5 +1,9 @@
 package Clases.Lab08;
 
+// UniquePath.java
+// @author: Paul Luque
+// @description: Encontrar el numero de caminos para llegar el otro extremo de la matris, en la matris de obtavulos, el 1 es un obtaculo y no podemos pasar por ese lugar
+
 public class UniquePath {
     public static void main(String[] args) {
         int[][] test = { { 0, 0, 0, 1 }, { 0, 1, 0, 1 }, { 0, 0, 0, 0 } };

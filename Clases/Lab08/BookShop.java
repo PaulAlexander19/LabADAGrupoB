@@ -2,6 +2,10 @@ package Clases.Lab08;
 
 import java.util.Scanner;
 
+// BookShop 
+// @author: Paul Luque
+// @description: Elegir el maximo numero de paginas que puedes comprar con un valor del precio maximo.
+
 public class BookShop {
     public static void main(String[] args) {
         // Entrada de datos
