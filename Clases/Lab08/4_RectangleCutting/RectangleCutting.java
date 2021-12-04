@@ -1,12 +1,15 @@
 
 import java.util.Scanner;
 
+// RectangleCutting 
+// @author: Paul Luque
+
 public class RectangleCutting {
 
 	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
-
+		// Recibiimos los datos
 		int a = scan.nextInt();
 
 		int b = scan.nextInt();

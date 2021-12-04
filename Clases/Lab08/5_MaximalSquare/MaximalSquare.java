@@ -3,10 +3,6 @@ public class MaximalSquare {
 
     public static void main(String[] args) {
 
-        // Metodo main del programa
-
-        // Recibimos la matriz con los caracteres 0's y 1's
-
         char[][] matrix = { { '1', '0', '1', '0', '0' },
                 { '1', '0', '1', '1', '1' },
                 { '1', '1', '1', '1', '1' },
