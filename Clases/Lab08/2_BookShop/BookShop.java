@@ -1,4 +1,3 @@
-package Clases.Lab08;
 
 import java.util.Scanner;
 
