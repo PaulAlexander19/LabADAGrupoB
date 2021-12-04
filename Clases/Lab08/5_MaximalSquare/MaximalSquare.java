@@ -1,6 +1,9 @@
 
 public class MaximalSquare {
 
+// MaximalSquare 
+// @author: Paul Luque
+
     public static void main(String[] args) {
 
         // Caso de prueba
