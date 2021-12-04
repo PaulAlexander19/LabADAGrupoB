@@ -1,8 +1,8 @@
 
 public class MaximalSquare {
 
-// MaximalSquare 
-// @author: Paul Luque
+    // MaximalSquare
+    // @author: Paul Luque
 
     public static void main(String[] args) {
 
@@ -13,6 +13,12 @@ public class MaximalSquare {
                 { '1', '0', '0', '1', '0' } };
 
         System.out.println(maximalSquare(matrix));
+
+        char[][] matrix2 = { { '1', '0' }, { '1', '0', }, };
+        System.out.println(maximalSquare(matrix2));
+
+        char[][] matrix3 = { { '0' } };
+        System.out.println(maximalSquare(matrix3));
 
     }
 

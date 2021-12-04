@@ -32,4 +32,11 @@ public class LengthOfLIS {
         return max;
     }
 
+    public static void casosPrueba(){
+        int[] test1 = {1,4,6,7,8,9};
+        System.out.println(new LengthOfLIS().lengthOfLIS(test1));
+        int[] test2 = {0,4,1,7,3,9};
+        System.out.println(new LengthOfLIS().lengthOfLIS(test2));
+    }
+
 }

@@ -14,32 +14,32 @@ public class BookShop {
 
         int maxPrice = sc.nextInt();
         // int maxPrice = 3;
-        
+
         int[] price = new int[n];
         // price[0] = 0;
         for (int i = 0; i < n; i++) {
-                price[i] = sc.nextInt();
-            }
+            price[i] = sc.nextInt();
+        }
         // int[] price = {0,1,2,3};
-            
-        int[] pages = new int[n+1];
+
+        int[] pages = new int[n + 1];
         // pages[0] = 0;
         for (int i = 0; i < n; i++) {
-                pages[i] = sc.nextInt();
-            }
-            
+            pages[i] = sc.nextInt();
+        }
+
         // int[] pages = {0,1,4,6};
 
         // System.out.println(n);
 
         // desarrollo del codigo
-        int[][] k = new int[n+1][maxPrice+1];
+        int[][] k = new int[n + 1][maxPrice + 1];
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= maxPrice; j++) {
-                k[i+1][j] = k[i][j];
+                k[i + 1][j] = k[i][j];
                 if (j >= price[i]) {
-                    k[i+1][j] = Math.max(k[i + 1][j], pages[i] + k[i][j - price[i]]);
+                    k[i + 1][j] = Math.max(k[i + 1][j], pages[i] + k[i][j - price[i]]);
                 }
             }
         }
