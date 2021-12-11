@@ -41,5 +41,4 @@ def main():
     print(*solveProblems(n, t, timeSolve))
 
 
-if __name__ == "__main__":
-    main()
+main()
