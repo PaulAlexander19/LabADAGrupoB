@@ -1,59 +1,65 @@
 
 import sys
 
+## Varible globales 
+INFINITY = sys.maxsize
+
 ## Creamos la clase grafo
 class Graph():
     def __init__(self, vertices):
         self.V = vertices
         ## Matriz con pesos de aristas
-        self.graoh = [[0 for column in range(vertices)]
+        self.graph = [[0 for column in range(vertices)]
                       for row in range(vertices)]
+        ## arreglo con el camino
+        self.path = [None] * self.V  
 
     ## Metodo para imprimir el MST
-    def printMST(self, parent):
+    def printMST(self):
         print("Egde \tWeight")
         for i in range(1, self.V):
-            print(parent[i], "-", i, "\t", self.graph[i][parent[i]])
+            print(self.path[i], "-", i, "\t", self.graph[i][self.path[i]])
 
     ## Imprime el valor total del MST
-    def printValueMST(self, parent):
+    def printValueMST(self):
         total = 0
         for i in range(1, self.V):
-            total += self.graph[i][parent[i]]
+            total += self.graph[i][self.path[i]]
         print(total)
         
     ## Encuentra la minima arista que no esta en el conjunto y cree un bucle
-    def minKey(self, key, mstSet):
-        min = sys.maxsize
+    def minKey(self, key, nodeVisited):
+        min = INFINITY
 
         for v in range(self.V):
-            if key[v] < min and mstSet[v] == False:
+            if key[v] < min and nodeVisited[v] == False:
                 min = key[v]
                 min_index = v
+        ## Retorna el nodo al cual visitaremos
         return min_index
 
     ## Algoritmo para encontrar el MST
     def primMST(self):
-        key = [sys.maxsize] * self.V
-        parent = [None] * self.V  
+        key = [INFINITY] * self.V
         key[0] = 0
-        mstSet = [False] * self.V
+        nodeVisited = [False] * self.V
 
-        parent[0] = -1  
+        ## alcualizamos el camino, el inicio del camino
+        self.path[0] = -1  
 
         for cout in range(self.V):
 
-            u = self.minKey(key, mstSet)
-            mstSet[u] = True
+            u = self.minKey(key, nodeVisited)
+            nodeVisited[u] = True ## Visitamos el nodo
 
+            ## Recorremos solo los nodos, actualizando key y los caminos
             for v in range(self.V):
 
-                if self.graph[u][v] > 0 and mstSet[v] == False and key[v] > self.graph[u][v]:
+                ## actualizamos el key de los nodos adyacentes que no estes visitados , tmbien actualizamos el camino
+                if self.graph[u][v] > 0 and nodeVisited[v] == False and key[v] > self.graph[u][v]:
                     key[v] = self.graph[u][v]
-                    parent[v] = u
+                    self.path[v] = u
 
-        self.printMST(parent)
-        self.printValueMST(parent)
 
 
 g = Graph(5)
@@ -64,3 +70,5 @@ g.graph = [ [0, 3, 0, 0, 7],
             [7, 0, 0, 4, 0]]
  
 g.primMST();
+g.printValueMST()
+print(g.path)
