@@ -1,4 +1,12 @@
 
+  
+/*
+ * @Autor: Luque Ccosi, Paul Alexander
+ * @Ejercicio: Road reparation
+ * Lab 10
+ * @Descripcion: calcular el costo que nesesario , para reparar del so caminos de cirto numero de cuidades relacionadas
+*/
+
 #include<iostream>
 #include <bits/stdc++.h>
 using namespace std;
