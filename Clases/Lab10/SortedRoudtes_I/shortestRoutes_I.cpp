@@ -1,4 +1,11 @@
 
+  
+/*
+ * @Autor: Luque Ccosi, Paul Alexander
+ * @Ejercicio: shortest Routes I
+ * Lab 10
+ * @Descripcion: calcular la ruta más corta las distiintas cuidades
+*/
 
 #include<iostream>
 #include <bits/stdc++.h>
