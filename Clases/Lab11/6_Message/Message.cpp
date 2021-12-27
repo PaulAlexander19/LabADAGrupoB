@@ -1,6 +1,7 @@
 // @Autor: Luque Ccosi, Paul Alexander
 // @Ejercicio: Message
 // Lab 11
+// DESCRIPCION: Su programa recibirá un diccionario de palabras y varias cadenas largas. Para cada cadena larga, determine el número máximo de no superpuestos subcadenas que puede encontrar que son palabras en el diccionario. Si el diccionario consta de las palabras "mono", "melocotón" y "cheque" y la cadena es "apeacheckape", entonces la respuesta es 3, ya que puede obtener el no-subcadenas superpuestas "ape", "check" y "ape" que ocurren en el diccionario.
 
 
 #include <algorithm>
@@ -17,9 +18,9 @@ map<int, int> cache;
 
 #define iter(it, c) for (__typeof((c).begin()) it = (c).begin(); it != (c).end(); ++it) // iteraramos sobre un map o un vector
 typedef vector<vector<int>> vvi;                                                        // matrices de enteros
-map<string, int> all;                                                                   // guardar todas las palabras del diccionario
-vvi res;                                                                                // guardar los resultados NODOS
-string s;                                                                               // guardar la cadena a analizares
+map<string, int> all;                                                                   // todas las palabras del diccionario
+vvi res;                                                                                // los resultados NODOS
+string s;                                                                               // la cadena a analizares
 
 // Aho-Corasick from SuprDewd
 struct aho_corasick
@@ -27,8 +28,8 @@ struct aho_corasick
   struct out_node
   {
     string keyword;                                          // palabra que se encuentra en el nodo
-    out_node *next;                                          // siguiente nodo
-    out_node(string k, out_node *n) : keyword(k), next(n) {} // constructor
+    out_node *next;                                           
+    out_node(string k, out_node *n) : keyword(k), next(n) {} 
   };
   struct go_node
   {
@@ -37,15 +38,15 @@ struct aho_corasick
     go_node *fail;             // siguiente nodo por fallo
     go_node()
     {
-      out = NULL;  // por defecto
-      fail = NULL; 
+      out = NULL; // por defecto
+      fail = NULL;
     }
   };
   go_node *go;
   int N;
   aho_corasick(vector<string> keywords)
   {
-    N = keywords.size(); // numero de palabras
+    N = keywords.size(); 
     go = new go_node();  // inicializar el arbol
     iter(k, keywords)
     {
@@ -55,21 +56,21 @@ struct aho_corasick
       cur->out = new out_node(*k, cur->out);
     }
     queue<go_node *> q;
-    iter(a, go->next) q.push(a->second); 
+    iter(a, go->next) q.push(a->second);
     while (!q.empty())
     {
       go_node *r = q.front(); // nodo actual
       q.pop();                // sacar nodo de la cola
       iter(a, r->next)
-      {                                                         // para cada caracter
-        go_node *s = a->second;                                 
-        q.push(s);                                              // agregar nodo a la cola
-        go_node *st = r->fail;                                  // nodo fallo
-        while (st && st->next.find(a->first) == st->next.end()) 
-          st = st->fail;                                        // siguiente fallo
+      { // para cada caracter
+        go_node *s = a->second;
+        q.push(s);             // agregar nodo a la cola
+        go_node *st = r->fail; // nodo fallo
+        while (st && st->next.find(a->first) == st->next.end())
+          st = st->fail; // siguiente fallo
         if (!st)
-          st = go;                    // fallo por defecto
-        s->fail = st->next[a->first]; 
+          st = go; // fallo por defecto
+        s->fail = st->next[a->first];
         if (s->fail)
         {
           if (!s->out)
@@ -110,9 +111,9 @@ struct aho_corasick
 int solve(int p)
 {
   if (s.size() == p)  // si ya se encontró la palabra
-    return 0;           // no hay subcadenas superpuestas
+    return 0;         // no hay subcadenas superpuestas
   if (cache.count(p)) // si ya se calculó el resultado
-    return cache[p];    // devolver el resultado
+    return cache[p];  // devolver el resultado
   int ans = 0;
   for (int i = 0; i < dic.size(); i++)
   {
@@ -134,7 +135,7 @@ int solve(int p)
 
 int main()
 {
-  string t;  // para guardar la cadena a analizar
+  string t;  
   int i = 0; // para guardar el numero de la palabra
   while (cin >> s && s[0] != '#')
   {
@@ -149,10 +150,10 @@ int main()
       s.append(t);
     }
     s = s.substr(0, s.size() - 1); // quitar el | final de la cadena
-    
-    aho_corasick AC(dic);     
-    cache.clear();            
-    res = AC.search(s);       
+
+    aho_corasick AC(dic);
+    cache.clear();
+    res = AC.search(s);
     cout << solve(0) << endl;
   }
 
