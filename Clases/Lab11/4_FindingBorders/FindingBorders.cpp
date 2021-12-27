@@ -1,4 +1,6 @@
-
+// @Autor: Luque Ccosi, Paul Alexander
+// @Ejercicio: FindingBorders
+// Lab 11
 
 #include <stdio.h>
 #include <string.h>
